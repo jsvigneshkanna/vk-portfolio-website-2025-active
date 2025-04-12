@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Theme Defaults */
+  --background: #FFFFFF; /* White */
+  --foreground: #000000; /* Black */
+  /* Add default secondary colors for light theme if needed */
+  --background-secondary: #F1F1F1; /* Example light secondary bg */
+  --foreground-secondary: #555555; /* Example light secondary text */
+}
+
+html.dark {
+  /* Dark Theme Variables */
+  --background: #181f22;          /* Updated Dark Primary BG */
+  --foreground: #ffffff;          /* Dark Primary Text */
+  --background-secondary: #000000; /* Dark Secondary BG (Cards) */
+  --foreground-secondary: #dddddd; /* Dark Secondary Text */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --font-sans: var(--font-inter);
+  --font-mono: system-ui, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition to body */
+}
+
+/* Example usage for secondary colors (apply classes to elements as needed) */
+.bg-secondary {
+  background-color: var(--background-secondary);
+  transition: background-color 0.3s ease; /* Add transition */
+}
+.text-secondary {
+  color: var(--foreground-secondary);
+  transition: color 0.3s ease; /* Add transition */
+}
+
+/* Add proper container styling */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
